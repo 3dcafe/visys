@@ -65,7 +65,6 @@ function initHistory(boot = false) {
       save();
     }
 }
-
 document.getElementById('redo').addEventListener("click", function() {
   if (HISTORY.index < HISTORY.length) {
     load(HISTORY.index);
@@ -138,7 +137,14 @@ function localSave() {
   downloadAnchorNode.click();
   downloadAnchorNode.remove();
 }
-
+function saveImg(){
+  console.log('save jpg');
+    html2canvas(document.getElementById("lin"), {
+        onrendered: function (canvas) {
+            Canvas2Image.saveAsPNG(canvas);
+        }
+    });
+}
 function load(index = HISTORY.index, boot = false) {
   if (HISTORY.length == 0 && !boot) return false;
   for (var k in OBJDATA){
