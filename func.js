@@ -137,6 +137,7 @@ function localSave() {
   downloadAnchorNode.click();
   downloadAnchorNode.remove();
 }
+
 function saveImg(){
   console.log('save jpg');
     html2canvas(document.getElementById("lin"), {
