@@ -26,7 +26,9 @@ h2 {
   border-radius:3px;
   transform: scale(1.05);
 }
-
+#img-out{
+    display: none;
+}
 .leftBox {
   background:#fff;
   box-shadow:2px 0px 3px #ccc;

@@ -137,14 +137,23 @@ function localSave() {
   downloadAnchorNode.click();
   downloadAnchorNode.remove();
 }
-
 function saveImg(){
   console.log('save jpg');
-    html2canvas(document.getElementById("lin"), {
-        onrendered: function (canvas) {
-            Canvas2Image.saveAsPNG(canvas);
-        }
+    html2canvas(document.querySelector('#lin')).then(function(canvas) {
+        document.querySelector('#img-out').appendChild(canvas);
+        Canvas2Image.saveAsPNG(canvas);
     });
+    // html2canvas(document.getElementById("lin"), {
+    //     onrendered: function (canvas) {
+    //       Canvas2Image.saveAsPNG(canvas);
+    //     }
+    // });
+}
+function createFile(){
+  const textVal = document.getElementById('create-text');
+  let saveText = textVal.value;
+  textVal.value = '';
+  console.log(saveText);
 }
 function load(index = HISTORY.index, boot = false) {
   if (HISTORY.length == 0 && !boot) return false;
