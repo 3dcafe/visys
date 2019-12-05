@@ -305,6 +305,12 @@
         <li><button class="btn btn-default fully " style="margin-bottom:0px" id="save_file" data-toggle="tooltip" data-placement="right" title="Make walls">SAVE</button></li>
         <br />
         <li>
+          <!-- Button trigger modal -->
+          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
+            open modal
+          </button>
+        </li>
+        <li>
         <button class="btn btn-default fully " style="margin-bottom:0px" id="line_mode" data-toggle="tooltip" data-placement="right" title="Make walls">WALL</button>
         <button class="btn btn-default fully " style="margin-bottom:0px" id="partition_mode" data-toggle="tooltip" data-placement="right" title="Make partitions wall">PARTITION</button>
         <div class="funkyradio"  style="font-size:0.8em">
@@ -380,12 +386,7 @@
       <br/>
 
       <li><button class="btn btn-default fully " id="layer_mode" onclick="$('.sub').hide();$('#layer_list').toggle(200);">Layers</button></li>
-        <li>
-          <!-- Button trigger modal -->
-          <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal">
-            open modal
-          </button>
-        </li>
+
 
     <div id="layer_list"  class="list-unstyled sub" style="box-shadow:2px 2px 3px #ccc;display:none;background:#fff;border-radius: 0 5px 5px 0; padding:10px;position:absolute;left:200px;bottom:100px;width:200px">
       <div class="funkyradio" style="font-size:0.8em">
