@@ -118,7 +118,7 @@ function save(boot = false) {
   return true;
 }
 
-function localSave() {
+function localSave(index) {
   if (HISTORY.length == 0 && !boot) return false;
   for (var k in OBJDATA){
     OBJDATA[k].graph.remove();
@@ -1385,13 +1385,8 @@ $('#select_mode').click(function() {
 });
 
 $('#save_file').click(function() {
-  localSave();
-  /*$('#lin').css('cursor', 'crosshair');
-  $('#boxinfo').html('Création de mur(s)');
-  multi = 0;
-  action = 0;
-  fonc_button('line_mode');
-  */
+  var historyTemp = JSON.parse(localStorage.getItem('history'));
+  localSave(historyTemp.length-1);
 });
 
 $('#line_mode').click(function() {
